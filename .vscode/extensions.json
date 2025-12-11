@@ -1,9 +1,0 @@
-{
-    "recommendations": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "astral-sh.ruff", 
-        "alexcvzz.vscode-sqlite",
-        "tamasfe.even-better-toml"
-    ]
-}
