@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🎬 Web Dashboard (Streamlit)",
+            "type": "python",
+            "request": "launch",
+            "module": "streamlit",
+            "args": [
+                "run",
+                "${workspaceFolder}/src/social_media_manager/ui/app.py"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "🐶 Watchdog (Auto-Pilot)",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/social_media_manager/cli.py",
+            "console": "integratedTerminal",
+            "args": [],
+            "justMyCode": true
+        },
+        {
+            "name": "🐍 Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

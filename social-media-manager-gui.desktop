@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Social Media Manager (Desktop)
+Comment=AI-powered social media content creation - Desktop GUI
+Exec=/home/hisham/social-media-manager/launch_gui.sh
+Icon=applications-multimedia
+Path=/home/hisham/social-media-manager
+Terminal=false
+Categories=Office;Network;
+StartupWMClass=Social Media Manager

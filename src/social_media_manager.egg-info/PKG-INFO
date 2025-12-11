@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: social_media_manager
+Version: 2.1.0
+Requires-Dist: moviepy
+Requires-Dist: pillow
+Requires-Dist: google-api-python-client
+Requires-Dist: requests
+Requires-Dist: schedule
+Requires-Dist: openai-whisper
+Requires-Dist: watchdog
+Requires-Dist: streamlit
+Requires-Dist: pydub
+Requires-Dist: pandas
+Dynamic: requires-dist

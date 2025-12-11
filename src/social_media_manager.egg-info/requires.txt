@@ -1,0 +1,10 @@
+moviepy
+pillow
+google-api-python-client
+requests
+schedule
+openai-whisper
+watchdog
+streamlit
+pydub
+pandas

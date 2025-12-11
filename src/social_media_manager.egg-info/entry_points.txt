@@ -1,0 +1,2 @@
+[console_scripts]
+social-media-manager = social_media_manager.cli:main

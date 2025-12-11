@@ -1,0 +1,72 @@
+# =============================================================================
+# AgencyOS - Dependencies
+# =============================================================================
+# Organized alphabetically within each category
+
+# --- AI / LLM ---
+chromadb                        # Vector database for RAG
+cohere                          # Cohere LLM API
+groq>=0.5.0                     # Groq LLM API
+huggingface_hub                 # Hugging Face model hub
+litellm>=1.30.0                 # Unified LLM interface
+openai-whisper                  # Speech-to-text
+sentence-transformers           # Text embeddings
+transformers                    # Hugging Face transformers (for CLIP)
+
+# --- Audio / Music ---
+audiocraft>=1.0.0               # Music generation
+pydub                           # Audio manipulation
+scipy                           # Signal processing
+soundfile                       # Audio file I/O
+voxcpm                          # Voice cloning TTS
+
+# --- Database ---
+pandas                          # Data manipulation
+psycopg2-binary>=2.9.9          # PostgreSQL driver
+sqlalchemy                      # ORM
+
+# --- Desktop GUI ---
+PyQt6>=6.6.0                    # Qt framework
+qasync>=0.27.0                  # Async support for Qt
+
+# --- Google APIs ---
+google-api-python-client        # Google API
+google-auth                     # Authentication
+google-auth-httplib2            # HTTP transport
+google-auth-oauthlib            # OAuth
+
+# --- Image / Video Processing ---
+ffmpeg-python>=0.2.0            # FFmpeg wrapper
+gfpgan>=1.3.8                   # Face restoration
+moviepy>=2.1.1                  # Video editing
+numpy                           # Numerical arrays
+opencv-python                   # Computer vision
+pillow>=10.0.0                  # Image processing
+realesrgan>=0.3.0               # Image upscaling
+rembg>=2.0.50                   # Background removal
+
+# --- MCP / Automation ---
+browser-use>=0.1.0              # Browser automation
+mcp[cli]>=1.20.0                # Model Context Protocol
+playwright>=1.40.0              # Browser automation
+schedule                        # Task scheduling
+watchdog                        # File system watcher
+
+# --- Networking / APIs ---
+duckduckgo-search>=5.0.0        # Web search
+feedparser                      # RSS/Atom feeds
+gradio_client>=0.10.0           # Gradio API client
+instagrapi                      # Instagram API
+pytrends>=4.9.0                 # Google Trends
+requests                        # HTTP client
+slack_sdk                       # Slack API (optional)
+
+# --- Reporting / Visualization ---
+fpdf2                           # PDF generation
+plotly                          # Interactive charts
+
+# --- Utilities ---
+loguru>=0.7.0                   # Logging
+psutil>=5.9.0                   # System monitoring
+python-dotenv                   # Environment variables
+tenacity                        # Retry logic

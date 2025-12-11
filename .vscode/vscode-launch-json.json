@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Complete Social Media Manager",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/complete_system.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
+    },
+    {
+      "name": "Run AI/ML System Only",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/ai_ml_system.py",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    // Formatting & Linting (The Fix)
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    // Hide clutter
+    "files.exclude": {
+        "**/.git": true,
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "venv": false,
+        "**/.DS_Store": true
+    },
+    "search.exclude": {
+        "**/venv": true,
+        "**/*.db": true,
+        "**/processed": true
+    },
+    "window.zoomLevel": 1
+}

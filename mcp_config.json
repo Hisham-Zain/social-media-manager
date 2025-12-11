@@ -1,0 +1,82 @@
+{
+    "mcpServers": {
+        "local-slack": {
+            "command": "python",
+            "args": [
+                "src/social_media_manager/servers/slack_server.py"
+            ],
+            "env": {
+                "SLACK_TOKEN": "${SLACK_TOKEN}",
+                "SLACK_CHANNEL": "${SLACK_CHANNEL}"
+            },
+            "description": "Slack notifications and alerts"
+        },
+        "local-calendar": {
+            "command": "python",
+            "args": [
+                "src/social_media_manager/servers/calendar_server.py"
+            ],
+            "description": "Calendar events for content planning"
+        },
+        "local-search": {
+            "command": "python",
+            "args": [
+                "src/social_media_manager/servers/duckduckgo_server.py"
+            ],
+            "description": "DuckDuckGo web search (free, no API key)"
+        },
+        "local-ffmpeg": {
+            "command": "python",
+            "args": [
+                "src/social_media_manager/servers/ffmpeg_server.py"
+            ],
+            "description": "FFmpeg video editing (local)"
+        },
+        "local-memory": {
+            "command": "python",
+            "args": [
+                "src/social_media_manager/servers/memory_server.py"
+            ],
+            "description": "ChromaDB vector memory (local)"
+        },
+        "local-social": {
+            "command": "python",
+            "args": [
+                "src/social_media_manager/servers/social_server.py"
+            ],
+            "env": {
+                "INSTAGRAM_USERNAME": "${INSTAGRAM_USERNAME}",
+                "INSTAGRAM_PASSWORD": "${INSTAGRAM_PASSWORD}"
+            },
+            "description": "Instagram posting via instagrapi"
+        },
+        "local-db": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-postgres"
+            ],
+            "env": {
+                "DATABASE_URL": "${DATABASE_URL}"
+            },
+            "description": "PostgreSQL database (local)"
+        },
+        "local-fs": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "./processed"
+            ],
+            "description": "Filesystem access to processed folder"
+        },
+        "browser": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@anthropics/mcp-server-puppeteer"
+            ],
+            "description": "Puppeteer headless browser (local)"
+        }
+    }
+}
