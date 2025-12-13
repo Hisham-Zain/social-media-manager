@@ -32,7 +32,9 @@ src/social_media_manager/
 ├── api.py        # FastAPI backend server
 ├── client.py     # API client for GUI ↔ backend
 ├── config.py     # Central configuration (reads .env)
-└── database.py   # SQLAlchemy ORM models
+├── container.py  # Dependency injection container
+├── database.py   # SQLAlchemy ORM models
+└── job_queue.py  # Background job processing
 ```
 
 ## Key Patterns
@@ -45,10 +47,18 @@ brain = HybridBrain()
 response = brain.think("prompt", context="optional context")
 ```
 
+### Dependency Injection
+Use the container for service access:
+```python
+from social_media_manager.container import get_container
+container = get_container()
+brain = container.brain
+db = container.db
+```
+
 ### Async in GUI
 Use `qasync` for async operations within PyQt:
 ```python
-import asyncio
 from qasync import asyncSlot
 
 @asyncSlot()
@@ -76,20 +86,38 @@ with db.session() as session:
 | Logging | Use `loguru` (never `print()`) |
 | Testing | pytest, all new features need tests |
 
+## Workflows
+
+Use these slash commands for common tasks:
+
+| Command | Description |
+|---------|-------------|
+| `/add-feature` | Step-by-step feature implementation |
+| `/api-endpoint` | Add a new REST API endpoint |
+| `/code-review` | Code review checklist |
+| `/debug` | Systematic debugging workflow |
+| `/docs` | Generate/update documentation |
+| `/git-flow` | Git branching and merging |
+| `/new-module` | Create a new Python module |
+| `/refactor` | Safe refactoring with validation |
+| `/run-tests` | Pre-commit quality checks |
+
 ## Before Submitting Changes
 
 ```bash
-ruff check .        # Linting
+ruff check . --fix  # Lint and auto-fix
 mypy .              # Type checking
-pytest              # Tests
+pytest -v --tb=short # Tests
 ```
 
 ## Environment Variables
 
 Key variables in `.env` (see `.env.example`):
-- `LLM_PROVIDER` / `LLM_MODEL` - Primary LLM
+- `LLM_PROVIDER` / `LLM_MODEL` - Primary LLM (default: gemini)
+- `LLM_FALLBACK_PROVIDER` / `LLM_FALLBACK_MODEL` - Fallback (groq)
 - `GEMINI_API_KEY`, `GROQ_API_KEY` - Provider keys
 - `PEXELS_API_KEY`, `PIXABAY_API_KEY` - Stock media
+- `DATABASE_URL` - PostgreSQL/SQLite connection
 
 ## Important Files
 
@@ -98,8 +126,17 @@ Key variables in `.env` (see `.env.example`):
 | `ai/brain.py` | Central LLM interface with fallback chain |
 | `gui/main.py` | GUI entry point |
 | `config.py` | All configuration management |
+| `container.py` | Dependency injection container |
 | `database.py` | SQLAlchemy models and DB manager |
 | `job_queue.py` | Background job processing |
+
+## Related Documentation
+
+| File | Content |
+|------|---------|
+| `.agent/codeContext.md` | Deep architecture reference with diagrams |
+| `.agent/workflows/` | Step-by-step workflow guides |
+| `GEMINI.md` | Project overview and conventions |
 
 ## Common Tasks
 
@@ -107,7 +144,7 @@ Key variables in `.env` (see `.env.example`):
 1. Create module in `src/social_media_manager/ai/`
 2. Use `HybridBrain` for LLM calls
 3. Export from `ai/__init__.py`
-4. Add tests in `tests/unit/`
+4. Add tests in `tests/`
 
 ### Adding a GUI View
 1. Create view in `gui/views/`
@@ -126,3 +163,4 @@ Key variables in `.env` (see `.env.example`):
 - ❌ Use `print()` (use `logger`)
 - ❌ Skip type hints
 - ❌ Commit to main directly
+- ❌ Ignore linter/type checker errors
